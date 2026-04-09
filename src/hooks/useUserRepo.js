@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { GITHUB_API_BASE_URL } from "../utils/api";
 
 export function useUserRepos(username) {
   const [repos, setRepos] = useState([]);
@@ -21,8 +22,7 @@ export function useUserRepos(username) {
 
       try {
         const response = await fetch(
-          `https://api.github.com/users/${username}/repos?per_page=100&sort=updated`,
-          // per_page=100 is GitHub's max — sort=updated gives most recent first
+          `${GITHUB_API_BASE_URL}/users/${username}/repos?per_page=100&sort=updated`,
         );
 
         if (response.status === 403)

@@ -6,6 +6,7 @@
  */
 
 import { useState, useEffect } from "react";
+import { GITHUB_API_BASE_URL } from "../utils/api";
 
 export function useGitHubSearch(query) {
   //states
@@ -32,7 +33,7 @@ export function useGitHubSearch(query) {
 
       try {
         const response = await fetch(
-          `https://api.github.com/search/users?q=${encodeURIComponent(query)}&per_page=12`,
+          `${GITHUB_API_BASE_URL}/search/users?q=${encodeURIComponent(query)}&per_page=12`,
         );
 
         if (response.status === 403) {
