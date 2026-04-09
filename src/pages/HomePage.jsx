@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { useGitHubSearch } from "../hooks/useGitHubSearch";
+import { useGitHubSearch } from "../hooks/useGithubSearch";
 
 import SearchBar from "../components/SearchBar";
 import UserList from "../components/UserList";
